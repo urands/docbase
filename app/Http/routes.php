@@ -12,6 +12,8 @@
 */
 
 Route::get('/', function () {
+
+	\Symfony\Component\Debug\Debug:enable();
     return view('welcome');
 });
 
