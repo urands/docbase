@@ -1,5 +1,6 @@
 var elixir = require('laravel-elixir');
 
+require('laravel-elixir-bower');
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -14,16 +15,21 @@ var elixir = require('laravel-elixir');
 
  var paths = {
     'bootstrap': './node_modules/bootstrap-sass/assets/',
-    'jquery' :  './bower_components/jquery/'
+    'jquery' :  './bower_components/jquery/',
+    'bower': './bower_components/'
 }
 
 elixir(function(mix) {
+         mix.bower('styles.css', 'public/css', 'scripts.js', 'public/js');
          mix.sass('app.scss')
         .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts')
+        .copy(paths.bower + 'font-awesome/fonts/**', 'public/fonts')
         .scripts([
             paths.jquery + "dist/jquery.js",
             paths.bootstrap + "javascripts/bootstrap.js"
         ], './public/js/', 'app.js');
+
+        
 });
 
 
@@ -48,6 +54,15 @@ function testNotification(status, pluginName, override) {
     options = _.merge(options, override);
   return options;
 }
+
+
+var bower = require('gulp-bower');
+ 
+gulp.task('bower1', function() {
+  return bower('./bower_components')
+    .pipe(gulp.dest('public/'))
+});
+
 
 
 /*
