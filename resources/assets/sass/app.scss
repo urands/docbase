@@ -6,31 +6,6 @@
   overflow: hidden; 
 }
  
-.foo {
-  @extend %hide-text;
-} 
-
-.bar {
-  @extend %hide-text; 
-}
-
-.baz {
-  font-size: 10px;
-  @extend %hide-text;
-}
-
-@mixin border-radius($radius) {
-  border-radius: $radius;
-}
-
-.foo {
-  @include border-radius(5px);
-}
-
-.bar {
-  @include border-radius(7px);
-}
-
-.baz {
-  @include border-radius(9px);
+a:hover button{
+	text-decoraration: none;
 }

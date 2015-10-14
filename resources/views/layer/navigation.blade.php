@@ -253,7 +253,7 @@
                             <a href="{{ url('/') }}"><i class="fa fa-dashboard fa-fw"></i> Панель управления</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Список проектов</a>
+                            <a href="{{route('project.index')}}"><i class="fa fa-sitemap fa-fw"></i> Список проектов</a>
                             <!-- <ul class="nav nav-second-level">
                                 <li>
                                     <a href="flot.html">Flot Charts</a>
@@ -264,7 +264,7 @@
                             </ul>
                             /.nav-second-level -->
                         </li>
-
+@can('registrar')
                         <li>
                             <a href="tables.html"><i class="fa fa-th-list  fa-fw"></i> Журнал учета</a>
                         </li>
@@ -347,7 +347,7 @@
                                     <a href="login.html">Версии и тип ПО для исходных файлов</a>
                                 </li>
 
-
+@endcan
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

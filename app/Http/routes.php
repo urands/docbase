@@ -13,13 +13,13 @@
 
 Route::get('/', function () {
 
-	Debugbar::startMeasure('render','Time for rendering');
-	Debugbar::stopMeasure('render');
-	Debugbar::addMeasure('now', LARAVEL_START, microtime(true));
-	Debugbar::measure('My long operation', function() {
+//	Debugbar::startMeasure('render','Time for rendering');
+//	Debugbar::stopMeasure('render');
+//	Debugbar::addMeasure('now', LARAVEL_START, microtime(true));
+//	Debugbar::measure('My long operation', function() {
 // Do something… 
 	
-});
+//});
 
     return view('welcome');
 });
@@ -29,6 +29,9 @@ Route::controllers([
  'auth' => 'Auth\AuthController',
  'password' => 'Auth\PasswordController',
 ]);
+
+
+Route::resource('project','ProjectController');
 
 
 // Authentication routes...

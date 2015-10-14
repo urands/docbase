@@ -36,4 +36,22 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+
+
+    protected $role = null;
+
+
+    public function role($role){
+    	if ( $this->role == null ){
+    		//TODO: add JSON array encode this
+    		$this->role  =  array( 'admin', 'registrar' );
+    	}
+    	if ( is_array($role)){
+    		if (count ( array_intersect( $this->role, $role ) ) > 0  ) return true;
+    	}else{
+    		if ( array_search($role, $this->role ) != false ) return true;
+    	}
+    	return false;
+    }
 }
