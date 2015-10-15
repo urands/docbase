@@ -20,15 +20,28 @@ require('laravel-elixir-bower');
 }
 
 elixir(function(mix) {
-         mix.bower('styles.css', 'public/css', 'scripts.js', 'public/js');
-         mix.sass('app.scss')
-        .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts')
-        .copy(paths.bower + 'font-awesome/fonts/**', 'public/fonts')
-        .scripts([
-            paths.jquery + "dist/jquery.js",
-            paths.bootstrap + "javascripts/bootstrap.js"
-        ], './public/js/', 'app.js');
+      /* fonts copy */
+      mix.copy(paths.bower + 'fuelux/dist/fonts/**', 'public/fonts');
+      mix.copy(paths.bower + 'font-awesome/fonts/**', 'public/fonts');
+      mix.copy(paths.bower + 'bootstrap/dist/fonts/**', 'public/fonts');
 
+
+      /* css copy */
+      mix.copy(paths.bower + 'bootstrap/dist/css/bootstrap.css', 'public/css');
+      mix.copy(paths.bower + 'fuelux/dist/css/fuelux.css', 'public/css');
+      mix.copy(paths.bower + 'font-awesome/css/font-awesome.css', 'public/css');
+
+      mix.copy(paths.bower + 'metisMenu/dist/metisMenu.css', 'public/css');
+
+      mix.copy(paths.bower + 'startbootstrap-sb-admin-2/dist/css/sb-admin-2.css', 'public/css');
+
+
+      /* js copy */
+      mix.copy(paths.bower + 'jquery/dist/jquery.js', 'public/js');
+      mix.copy(paths.bower + 'bootstrap/dist/js/bootstrap.js', 'public/js');
+      mix.copy(paths.bower + 'fuelux/dist/js/fuelux.js', 'public/js');
+      mix.copy(paths.bower + 'metisMenu/dist/metisMenu.js', 'public/js');
+      mix.copy(paths.bower + 'startbootstrap-sb-admin-2/dist/js/sb-admin-2.js', 'public/js');
         
 });
 
@@ -58,7 +71,7 @@ function testNotification(status, pluginName, override) {
 
 var bower = require('gulp-bower');
  
-gulp.task('bower1', function() {
+gulp.task('bower123', function() {
   return bower('./bower_components')
     .pipe(gulp.dest('public/'))
 });

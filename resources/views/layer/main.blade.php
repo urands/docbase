@@ -2,11 +2,14 @@
 <html>
     <head>
         <title>NCBASE - архив</title>
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-		<link href="{{ URL::asset('css/app.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ URL::asset('css/styles.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ URL::asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ URL::asset('css/font-awesome.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ URL::asset('css/fuelux.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ URL::asset('css/metisMenu.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ URL::asset('css/sb-admin-2.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ URL::asset('css/master.css') }}" rel="stylesheet" type="text/css">
     </head>
-    <body>
+    <body class="fuelux">
     <div id="wrapper">
         @include ('layer.navigation')
     <div id="page-wrapper">
@@ -19,8 +22,14 @@
     <!-- /#wrapper -->
     <!-- jQuery -->
 
-    <script src="{{  URL::asset('js/scripts.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
+    <script src="{{  URL::asset('js/jquery.js') }}"></script>
+    <script src="{{  URL::asset('js/bootstrap.js') }}"></script>
+    <script src="{{  URL::asset('js/fuelux.js') }}"></script>
+    <script src="{{  URL::asset('js/metisMenu.js') }}"></script>
+    <script src="{{  URL::asset('js/sb-admin-2.js') }}"></script>
+
+    
 
     @yield('script')
 

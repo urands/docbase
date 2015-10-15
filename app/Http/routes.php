@@ -33,6 +33,8 @@ Route::controllers([
 
 Route::resource('project','ProjectController');
 
+Route::resource('document','DocumentController');
+
 
 // Authentication routes...
 //Route::get('auth/login', 'Auth\AuthController@getLogin');

@@ -11,9 +11,9 @@
             <div class="row">
                 <div class="col-lg-12">
                 @if (empty ($project) )
-                    <h1 class="page-header">Создать новый проект</h1>
+                    <h1 class="page-header"><a href="javascript:history.back();"><i class="fa fa-arrow-left"  title="Вернуться назад"></i></a> Создать новый проект</h1>
                 @else
-                	<h1 class="page-header">Редактировать проект</h1>
+                	<h1 class="page-header"><a href="javascript:history.back();"><i class="fa fa-arrow-left"  title="Вернуться назад"></i></a> Редактировать проект</h1>
                 @endif
                 </div>
                 <!-- /.col-lg-12 -->

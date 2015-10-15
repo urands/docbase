@@ -2,6 +2,9 @@
 
 namespace App\Policies;
 
+use App\Models\User;
+use App\Models\Project;
+
 class ProjectPolicy
 {
     /**
@@ -18,8 +21,9 @@ class ProjectPolicy
 
     public function manage(User $user, Project $project)
     {
-    	dd($project);
-    	return true;
-        //return $project->hasUser($user->id) || $user->role( 'admin' );
+    	//dd($project);
+    	//return true;
+        //dd( $user->role( 'admin' ));
+        return ($project->hasUser($user->id) || $user->role( 'admin' ));
     }
 }
